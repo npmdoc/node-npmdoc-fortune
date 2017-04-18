@@ -1,0 +1,4381 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://fortune.js.org">fortune (v5.1.0)</a>
+</h1>
+<h4>Database abstraction layer for data-driven applications.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune">module fortune</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.fortune">
+            function <span class="apidocSignatureSpan"></span>fortune
+            <span class="apidocSignatureSpan">(recordTypes, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter
+            <span class="apidocSignatureSpan">(properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter
+            <span class="apidocSignatureSpan">(properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.connect">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.connect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.create">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.create
+            <span class="apidocSignatureSpan">(type, records, meta)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.delete">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.delete
+            <span class="apidocSignatureSpan">(type, ids)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.disconnect">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.find">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.find
+            <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.update">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.update
+            <span class="apidocSignatureSpan">(type, updates)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.applyOperators">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.applyOperators
+            <span class="apidocSignatureSpan">(record)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.beginTransaction">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.beginTransaction
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.connect">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.connect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.create">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.delete">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.delete
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.disconnect">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.endTransaction">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.endTransaction
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.find">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.find
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.update">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.update
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory">
+            function <span class="apidocSignatureSpan">fortune.</span>adapters.memory
+            <span class="apidocSignatureSpan">(properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.connect">
+            function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.connect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.create">
+            function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.create
+            <span class="apidocSignatureSpan">(type, records, meta)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.delete">
+            function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.delete
+            <span class="apidocSignatureSpan">(type, ids)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.disconnect">
+            function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.find">
+            function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.find
+            <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.update">
+            function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.update
+            <span class="apidocSignatureSpan">(type, updates)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.BadRequestError">
+            function <span class="apidocSignatureSpan">fortune.</span>errors.BadRequestError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.ConflictError">
+            function <span class="apidocSignatureSpan">fortune.</span>errors.ConflictError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.ForbiddenError">
+            function <span class="apidocSignatureSpan">fortune.</span>errors.ForbiddenError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.MethodError">
+            function <span class="apidocSignatureSpan">fortune.</span>errors.MethodError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.NotAcceptableError">
+            function <span class="apidocSignatureSpan">fortune.</span>errors.NotAcceptableError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.NotFoundError">
+            function <span class="apidocSignatureSpan">fortune.</span>errors.NotFoundError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.UnauthorizedError">
+            function <span class="apidocSignatureSpan">fortune.</span>errors.UnauthorizedError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.UnsupportedError">
+            function <span class="apidocSignatureSpan">fortune.</span>errors.UnsupportedError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.message">
+            function <span class="apidocSignatureSpan">fortune.</span>message
+            <span class="apidocSignatureSpan">(id, language, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.toString">
+            function <span class="apidocSignatureSpan">fortune.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.</span>adapters</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.</span>errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.</span>errors.nativeErrors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.</span>events</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.</span>methods</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter">module fortune.Adapter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.Adapter">
+            function <span class="apidocSignatureSpan">fortune.</span>Adapter
+            <span class="apidocSignatureSpan">(properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter">
+            function <span class="apidocSignatureSpan">fortune.Adapter.</span>DefaultAdapter
+            <span class="apidocSignatureSpan">(properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.Adapter.</span>features</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.DefaultAdapter">module fortune.Adapter.DefaultAdapter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.DefaultAdapter">
+            function <span class="apidocSignatureSpan">fortune.Adapter.</span>DefaultAdapter
+            <span class="apidocSignatureSpan">(properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.</span>common</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.</span>features</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype">module fortune.Adapter.DefaultAdapter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.connect">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>connect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.create">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>create
+            <span class="apidocSignatureSpan">(type, records, meta)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.delete">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>delete
+            <span class="apidocSignatureSpan">(type, ids)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.disconnect">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.find">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>find
+            <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.update">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>update
+            <span class="apidocSignatureSpan">(type, updates)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.connect">module fortune.Adapter.DefaultAdapter.prototype.connect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.connect.connect">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>connect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.create">module fortune.Adapter.DefaultAdapter.prototype.create</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.create.create">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>create
+            <span class="apidocSignatureSpan">(type, records, meta)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.delete">module fortune.Adapter.DefaultAdapter.prototype.delete</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.delete.delete">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>delete
+            <span class="apidocSignatureSpan">(type, ids)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.disconnect">module fortune.Adapter.DefaultAdapter.prototype.disconnect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.disconnect.disconnect">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.find">module fortune.Adapter.DefaultAdapter.prototype.find</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.find.find">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>find
+            <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.update">module fortune.Adapter.DefaultAdapter.prototype.update</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.update.update">
+            function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>update
+            <span class="apidocSignatureSpan">(type, updates)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.prototype">module fortune.Adapter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.applyOperators">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>applyOperators
+            <span class="apidocSignatureSpan">(record)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.beginTransaction">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>beginTransaction
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.connect">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>connect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.create">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.delete">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>delete
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.disconnect">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.endTransaction">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>endTransaction
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.find">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>find
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.update">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>update
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.prototype.applyOperators">module fortune.Adapter.prototype.applyOperators</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.applyOperators.applyOperators">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>applyOperators
+            <span class="apidocSignatureSpan">(record)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.prototype.beginTransaction">module fortune.Adapter.prototype.beginTransaction</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.beginTransaction.beginTransaction">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>beginTransaction
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.prototype.connect">module fortune.Adapter.prototype.connect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.connect.connect">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>connect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.prototype.create">module fortune.Adapter.prototype.create</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.create.create">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.prototype.delete">module fortune.Adapter.prototype.delete</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.delete.delete">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>delete
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.prototype.disconnect">module fortune.Adapter.prototype.disconnect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.disconnect.disconnect">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.prototype.endTransaction">module fortune.Adapter.prototype.endTransaction</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.endTransaction.endTransaction">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>endTransaction
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.prototype.find">module fortune.Adapter.prototype.find</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.find.find">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>find
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.Adapter.prototype.update">module fortune.Adapter.prototype.update</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.Adapter.prototype.update.update">
+            function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>update
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.adapters">module fortune.adapters</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory">
+            function <span class="apidocSignatureSpan">fortune.adapters.</span>memory
+            <span class="apidocSignatureSpan">(properties)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.adapters.memory">module fortune.adapters.memory</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.memory">
+            function <span class="apidocSignatureSpan">fortune.adapters.</span>memory
+            <span class="apidocSignatureSpan">(properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.adapters.memory.</span>common</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.adapters.memory.</span>features</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.adapters.memory.prototype">module fortune.adapters.memory.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.connect">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>connect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.create">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>create
+            <span class="apidocSignatureSpan">(type, records, meta)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.delete">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>delete
+            <span class="apidocSignatureSpan">(type, ids)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.disconnect">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.find">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>find
+            <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.update">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>update
+            <span class="apidocSignatureSpan">(type, updates)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.adapters.memory.prototype.connect">module fortune.adapters.memory.prototype.connect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.connect.connect">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>connect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.adapters.memory.prototype.create">module fortune.adapters.memory.prototype.create</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.create.create">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>create
+            <span class="apidocSignatureSpan">(type, records, meta)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.adapters.memory.prototype.delete">module fortune.adapters.memory.prototype.delete</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.delete.delete">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>delete
+            <span class="apidocSignatureSpan">(type, ids)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.adapters.memory.prototype.disconnect">module fortune.adapters.memory.prototype.disconnect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.disconnect.disconnect">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>disconnect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.adapters.memory.prototype.find">module fortune.adapters.memory.prototype.find</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.find.find">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>find
+            <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.adapters.memory.prototype.update">module fortune.adapters.memory.prototype.update</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.adapters.memory.prototype.update.update">
+            function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>update
+            <span class="apidocSignatureSpan">(type, updates)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.errors">module fortune.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.BadRequestError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>BadRequestError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.ConflictError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>ConflictError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.ForbiddenError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>ForbiddenError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.MethodError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>MethodError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.NotAcceptableError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>NotAcceptableError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.NotFoundError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>NotFoundError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.UnauthorizedError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>UnauthorizedError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.UnsupportedError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>UnsupportedError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.errors.</span>nativeErrors</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.errors.BadRequestError">module fortune.errors.BadRequestError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.BadRequestError.BadRequestError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>BadRequestError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.errors.ConflictError">module fortune.errors.ConflictError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.ConflictError.ConflictError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>ConflictError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.errors.ForbiddenError">module fortune.errors.ForbiddenError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.ForbiddenError.ForbiddenError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>ForbiddenError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.errors.MethodError">module fortune.errors.MethodError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.MethodError.MethodError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>MethodError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.errors.NotAcceptableError">module fortune.errors.NotAcceptableError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.NotAcceptableError.NotAcceptableError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>NotAcceptableError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.errors.NotFoundError">module fortune.errors.NotFoundError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.NotFoundError.NotFoundError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>NotFoundError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.errors.UnauthorizedError">module fortune.errors.UnauthorizedError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.UnauthorizedError.UnauthorizedError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>UnauthorizedError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.errors.UnsupportedError">module fortune.errors.UnsupportedError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.UnsupportedError.UnsupportedError">
+            function <span class="apidocSignatureSpan">fortune.errors.</span>UnsupportedError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.errors.nativeErrors">module fortune.errors.nativeErrors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.nativeErrors.0">
+            function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>0
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.nativeErrors.1">
+            function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>1
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.nativeErrors.2">
+            function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>2
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.nativeErrors.3">
+            function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>3
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.nativeErrors.4">
+            function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>4
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.nativeErrors.5">
+            function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>5
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.errors.nativeErrors.6">
+            function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>6
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.message">module fortune.message</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.message.message">
+            function <span class="apidocSignatureSpan">fortune.</span>message
+            <span class="apidocSignatureSpan">(id, language, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fortune.message.</span>en</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fortune.toString">module fortune.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fortune.toString.toString">
+            function <span class="apidocSignatureSpan">fortune.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune" id="apidoc.module.fortune">module fortune</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.fortune" id="apidoc.element.fortune.fortune">
+        function <span class="apidocSignatureSpan"></span>fortune
+        <span class="apidocSignatureSpan">(recordTypes, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Fortune(recordTypes, options) {
+  if (!(this instanceof Fortune))
+    return new Fortune(recordTypes, options)
+
+  this.constructor(recordTypes, options)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter" id="apidoc.element.fortune.Adapter">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter
+        <span class="apidocSignatureSpan">(properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Adapter(properties) {
+  assign(this, properties)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter" id="apidoc.element.fortune.Adapter.DefaultAdapter">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter
+        <span class="apidocSignatureSpan">(properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemoryAdapter(properties) {
+  Adapter.call(this, properties)
+  if (!this.options) this.options = {}
+  if (!('recordsPerType' in this.options))
+    this.options.recordsPerType = 1000
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.connect" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.connect">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.connect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.DefaultAdapter.prototype.connect = function () {
+  var recordTypes = this.recordTypes
+  var type
+
+  this.db = {}
+
+  for (type in recordTypes)
+    this.db[type] = {}
+
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.create" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.create">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.create
+        <span class="apidocSignatureSpan">(type, records, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.DefaultAdapter.prototype.create = function (type, records, meta) {
+  var self = this
+  var message = self.message
+  var recordsPerType = self.options.recordsPerType
+  var primaryKey = self.keys.primary
+  var ConflictError = self.errors.ConflictError
+  var collection = self.db[type]
+  var i, j, record, id, ids, language
+
+  if (!meta) meta = {}
+  language = meta.language
+
+  records = map(records, function (record) {
+    return inputRecord.call(self, type, record)
+  })
+
+  // First check for collisions.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    id = record[primaryKey]
+
+    if (collection.hasOwnProperty(id))
+      return Promise.reject(new ConflictError(
+        message('RecordExists', language, { id: id })))
+  }
+
+  // Then save it to memory.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    collection[record[primaryKey]] = record
+  }
+
+  // Clear least recently used records.
+  if (recordsPerType) {
+    ids = Object.keys(collection)
+
+    if (ids.length &gt; recordsPerType) {
+      ids = ids.slice(0, ids.length - recordsPerType)
+
+      for (i = 0, j = ids.length; i &lt; j; i++)
+        delete collection[ids[i]]
+    }
+  }
+
+  return Promise.resolve(map(records, function (record) {
+    return outputRecord.call(self, type, record)
+  }))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.delete" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.delete">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.delete
+        <span class="apidocSignatureSpan">(type, ids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.DefaultAdapter.prototype.delete = function (type, ids) {
+  var collection = this.db[type]
+  var count = 0
+  var i, j, id
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.delete.call(this)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection[id]) {
+      delete collection[id]
+      count++
+    }
+  }
+
+  else for (id in collection) {
+    delete collection[id]
+    count++
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.disconnect" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.disconnect">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.DefaultAdapter.prototype.disconnect = function () {
+  delete this.db
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.find" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.find">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.find
+        <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.DefaultAdapter.prototype.find = function (type, ids, options, meta) {
+  var self = this
+  var recordTypes = self.recordTypes
+  var fields = recordTypes[type]
+  var collection = self.db[type]
+  var records = []
+  var i, j, id, record
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.find.call(self)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection.hasOwnProperty(id)) {
+      record = collection[id]
+
+      // LRU update.
+      delete collection[id]
+      collection[id] = record
+
+      records.push(outputRecord.call(self, type, record))
+    }
+  }
+
+  else for (id in collection)
+    records.push(outputRecord.call(self, type, collection[id]))
+
+  return Promise.resolve(applyOptions(fields, records, options, meta))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.update" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.update">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.DefaultAdapter.prototype.update
+        <span class="apidocSignatureSpan">(type, updates)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.DefaultAdapter.prototype.update = function (type, updates) {
+  var self = this
+  var primaryKey = self.keys.primary
+  var collection = self.db[type]
+  var count = 0
+  var i, j, update, id, record
+
+  if (!updates.length) return Adapter.prototype.update.call(self)
+
+  for (i = 0, j = updates.length; i &lt; j; i++) {
+    update = updates[i]
+    id = update[primaryKey]
+    record = collection[id]
+
+    if (!record) continue
+
+    count++
+    record = outputRecord.call(self, type, record)
+
+    applyUpdate(record, update)
+
+    // LRU update.
+    delete collection[id]
+
+    collection[id] = inputRecord.call(self, type, record)
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.applyOperators" id="apidoc.element.fortune.Adapter.prototype.applyOperators">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.applyOperators
+        <span class="apidocSignatureSpan">(record)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.prototype.applyOperators = function (record) {
+  return record
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.beginTransaction" id="apidoc.element.fortune.Adapter.prototype.beginTransaction">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.beginTransaction
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.prototype.beginTransaction = function () {
+  return Promise.resolve(this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.connect" id="apidoc.element.fortune.Adapter.prototype.connect">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.connect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.prototype.connect = function () {
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.create" id="apidoc.element.fortune.Adapter.prototype.create">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.prototype.create = function () {
+  return Promise.resolve([])
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.delete" id="apidoc.element.fortune.Adapter.prototype.delete">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.delete
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.prototype.delete = function () {
+  return Promise.resolve(0)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.disconnect" id="apidoc.element.fortune.Adapter.prototype.disconnect">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.prototype.disconnect = function () {
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.endTransaction" id="apidoc.element.fortune.Adapter.prototype.endTransaction">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.endTransaction
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.prototype.endTransaction = function () {
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.find" id="apidoc.element.fortune.Adapter.prototype.find">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.find
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.prototype.find = function () {
+  var results = []
+  results.count = 0
+  return Promise.resolve(results)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.update" id="apidoc.element.fortune.Adapter.prototype.update">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter.prototype.update
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Adapter.prototype.update = function () {
+  return Promise.resolve(0)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory" id="apidoc.element.fortune.adapters.memory">
+        function <span class="apidocSignatureSpan">fortune.</span>adapters.memory
+        <span class="apidocSignatureSpan">(properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemoryAdapter(properties) {
+  Adapter.call(this, properties)
+  if (!this.options) this.options = {}
+  if (!('recordsPerType' in this.options))
+    this.options.recordsPerType = 1000
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.connect" id="apidoc.element.fortune.adapters.memory.prototype.connect">
+        function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.connect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adapters.memory.prototype.connect = function () {
+  var recordTypes = this.recordTypes
+  var type
+
+  this.db = {}
+
+  for (type in recordTypes)
+    this.db[type] = {}
+
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.create" id="apidoc.element.fortune.adapters.memory.prototype.create">
+        function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.create
+        <span class="apidocSignatureSpan">(type, records, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adapters.memory.prototype.create = function (type, records, meta) {
+  var self = this
+  var message = self.message
+  var recordsPerType = self.options.recordsPerType
+  var primaryKey = self.keys.primary
+  var ConflictError = self.errors.ConflictError
+  var collection = self.db[type]
+  var i, j, record, id, ids, language
+
+  if (!meta) meta = {}
+  language = meta.language
+
+  records = map(records, function (record) {
+    return inputRecord.call(self, type, record)
+  })
+
+  // First check for collisions.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    id = record[primaryKey]
+
+    if (collection.hasOwnProperty(id))
+      return Promise.reject(new ConflictError(
+        message('RecordExists', language, { id: id })))
+  }
+
+  // Then save it to memory.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    collection[record[primaryKey]] = record
+  }
+
+  // Clear least recently used records.
+  if (recordsPerType) {
+    ids = Object.keys(collection)
+
+    if (ids.length &gt; recordsPerType) {
+      ids = ids.slice(0, ids.length - recordsPerType)
+
+      for (i = 0, j = ids.length; i &lt; j; i++)
+        delete collection[ids[i]]
+    }
+  }
+
+  return Promise.resolve(map(records, function (record) {
+    return outputRecord.call(self, type, record)
+  }))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.delete" id="apidoc.element.fortune.adapters.memory.prototype.delete">
+        function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.delete
+        <span class="apidocSignatureSpan">(type, ids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adapters.memory.prototype.delete = function (type, ids) {
+  var collection = this.db[type]
+  var count = 0
+  var i, j, id
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.delete.call(this)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection[id]) {
+      delete collection[id]
+      count++
+    }
+  }
+
+  else for (id in collection) {
+    delete collection[id]
+    count++
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.disconnect" id="apidoc.element.fortune.adapters.memory.prototype.disconnect">
+        function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adapters.memory.prototype.disconnect = function () {
+  delete this.db
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.find" id="apidoc.element.fortune.adapters.memory.prototype.find">
+        function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.find
+        <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adapters.memory.prototype.find = function (type, ids, options, meta) {
+  var self = this
+  var recordTypes = self.recordTypes
+  var fields = recordTypes[type]
+  var collection = self.db[type]
+  var records = []
+  var i, j, id, record
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.find.call(self)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection.hasOwnProperty(id)) {
+      record = collection[id]
+
+      // LRU update.
+      delete collection[id]
+      collection[id] = record
+
+      records.push(outputRecord.call(self, type, record))
+    }
+  }
+
+  else for (id in collection)
+    records.push(outputRecord.call(self, type, collection[id]))
+
+  return Promise.resolve(applyOptions(fields, records, options, meta))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.update" id="apidoc.element.fortune.adapters.memory.prototype.update">
+        function <span class="apidocSignatureSpan">fortune.</span>adapters.memory.prototype.update
+        <span class="apidocSignatureSpan">(type, updates)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adapters.memory.prototype.update = function (type, updates) {
+  var self = this
+  var primaryKey = self.keys.primary
+  var collection = self.db[type]
+  var count = 0
+  var i, j, update, id, record
+
+  if (!updates.length) return Adapter.prototype.update.call(self)
+
+  for (i = 0, j = updates.length; i &lt; j; i++) {
+    update = updates[i]
+    id = update[primaryKey]
+    record = collection[id]
+
+    if (!record) continue
+
+    count++
+    record = outputRecord.call(self, type, record)
+
+    applyUpdate(record, update)
+
+    // LRU update.
+    delete collection[id]
+
+    collection[id] = inputRecord.call(self, type, record)
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.BadRequestError" id="apidoc.element.fortune.errors.BadRequestError">
+        function <span class="apidocSignatureSpan">fortune.</span>errors.BadRequestError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BadRequestError() { if (!(this instanceof BadRequestError)) return new (BadRequestError.bind.apply(BadRequestError, Array
+.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.ConflictError" id="apidoc.element.fortune.errors.ConflictError">
+        function <span class="apidocSignatureSpan">fortune.</span>errors.ConflictError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ConflictError() { if (!(this instanceof ConflictError)) return new (ConflictError.bind.apply(ConflictError, Array.prototype
+.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.ForbiddenError" id="apidoc.element.fortune.errors.ForbiddenError">
+        function <span class="apidocSignatureSpan">fortune.</span>errors.ForbiddenError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ForbiddenError() { if (!(this instanceof ForbiddenError)) return new (ForbiddenError.bind.apply(ForbiddenError, Array.prototype
+.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.MethodError" id="apidoc.element.fortune.errors.MethodError">
+        function <span class="apidocSignatureSpan">fortune.</span>errors.MethodError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MethodError() { if (!(this instanceof MethodError)) return new (MethodError.bind.apply(MethodError, Array.prototype.concat
+.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.NotAcceptableError" id="apidoc.element.fortune.errors.NotAcceptableError">
+        function <span class="apidocSignatureSpan">fortune.</span>errors.NotAcceptableError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotAcceptableError() { if (!(this instanceof NotAcceptableError)) return new (NotAcceptableError.bind.apply(NotAcceptableError
+, Array.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.NotFoundError" id="apidoc.element.fortune.errors.NotFoundError">
+        function <span class="apidocSignatureSpan">fortune.</span>errors.NotFoundError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotFoundError() { if (!(this instanceof NotFoundError)) return new (NotFoundError.bind.apply(NotFoundError, Array.prototype
+.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.UnauthorizedError" id="apidoc.element.fortune.errors.UnauthorizedError">
+        function <span class="apidocSignatureSpan">fortune.</span>errors.UnauthorizedError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UnauthorizedError() { if (!(this instanceof UnauthorizedError)) return new (UnauthorizedError.bind.apply(UnauthorizedError
+, Array.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.UnsupportedError" id="apidoc.element.fortune.errors.UnsupportedError">
+        function <span class="apidocSignatureSpan">fortune.</span>errors.UnsupportedError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UnsupportedError() { if (!(this instanceof UnsupportedError)) return new (UnsupportedError.bind.apply(UnsupportedError,
+Array.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.message" id="apidoc.element.fortune.message">
+        function <span class="apidocSignatureSpan">fortune.</span>message
+        <span class="apidocSignatureSpan">(id, language, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function message(id, language, data) {
+  var str, key, subtag
+
+  if (!message.hasOwnProperty(language)) {
+    subtag = language &amp;&amp; language.match(/.+?(?=-)/)
+    if (subtag) subtag = subtag[0]
+    if (message.hasOwnProperty(subtag)) language = subtag
+    else language = message.defaultLanguage
+  }
+
+  if (!message[language].hasOwnProperty(id))
+    return message[language][genericMessage] || message.en[genericMessage]
+
+  str = message[language][id]
+
+  for (key in data) str = str.replace('{' + key + '}', data[key])
+
+  return str
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.toString" id="apidoc.element.fortune.toString">
+        function <span class="apidocSignatureSpan">fortune.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter" id="apidoc.module.fortune.Adapter">module fortune.Adapter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.Adapter" id="apidoc.element.fortune.Adapter.Adapter">
+        function <span class="apidocSignatureSpan">fortune.</span>Adapter
+        <span class="apidocSignatureSpan">(properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Adapter(properties) {
+  assign(this, properties)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter" id="apidoc.element.fortune.Adapter.DefaultAdapter">
+        function <span class="apidocSignatureSpan">fortune.Adapter.</span>DefaultAdapter
+        <span class="apidocSignatureSpan">(properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemoryAdapter(properties) {
+  Adapter.call(this, properties)
+  if (!this.options) this.options = {}
+  if (!('recordsPerType' in this.options))
+    this.options.recordsPerType = 1000
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.DefaultAdapter" id="apidoc.module.fortune.Adapter.DefaultAdapter">module fortune.Adapter.DefaultAdapter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.DefaultAdapter" id="apidoc.element.fortune.Adapter.DefaultAdapter.DefaultAdapter">
+        function <span class="apidocSignatureSpan">fortune.Adapter.</span>DefaultAdapter
+        <span class="apidocSignatureSpan">(properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemoryAdapter(properties) {
+  Adapter.call(this, properties)
+  if (!this.options) this.options = {}
+  if (!('recordsPerType' in this.options))
+    this.options.recordsPerType = 1000
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype" id="apidoc.module.fortune.Adapter.DefaultAdapter.prototype">module fortune.Adapter.DefaultAdapter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.connect" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.connect">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>connect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function () {
+  var recordTypes = this.recordTypes
+  var type
+
+  this.db = {}
+
+  for (type in recordTypes)
+    this.db[type] = {}
+
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The `fortuneHTTP` function returns a listener function which does
+// content negotiation, and maps the internal response to a HTTP response.
+const listener = fortuneHTTP(store)
+const server = http.createServer((request, response) =&gt;
+  listener(request, response)
+  .catch(error =&gt; { /* error logging */ }))
+
+store.<span class="apidocCodeKeywordSpan">connect</span>().then(() =&gt; server.listen(1337))
+```
+
+This yields an *ad hoc* JSON over HTTP API, as well as a HTML interface for humans. There are also serializers for [Micro API](https
+://github.com/fortunejs/fortune-micro-api) (JSON-LD) and [JSON API](https://github.com/fortunejs/fortune-json-api).
+
+Fortune.js implements its own [wire protocol](https://github.com/fortunejs/fortune-ws) based on [WebSocket](https://developer.mozilla
+.org/docs/Web/API/WebSockets_API) and [MessagePack](http://msgpack.org), which is useful for soft real-time applications.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.create" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.create">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>create
+        <span class="apidocSignatureSpan">(type, records, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (type, records, meta) {
+  var self = this
+  var message = self.message
+  var recordsPerType = self.options.recordsPerType
+  var primaryKey = self.keys.primary
+  var ConflictError = self.errors.ConflictError
+  var collection = self.db[type]
+  var i, j, record, id, ids, language
+
+  if (!meta) meta = {}
+  language = meta.language
+
+  records = map(records, function (record) {
+    return inputRecord.call(self, type, record)
+  })
+
+  // First check for collisions.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    id = record[primaryKey]
+
+    if (collection.hasOwnProperty(id))
+      return Promise.reject(new ConflictError(
+        message('RecordExists', language, { id: id })))
+  }
+
+  // Then save it to memory.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    collection[record[primaryKey]] = record
+  }
+
+  // Clear least recently used records.
+  if (recordsPerType) {
+    ids = Object.keys(collection)
+
+    if (ids.length &gt; recordsPerType) {
+      ids = ids.slice(0, ids.length - recordsPerType)
+
+      for (i = 0, j = ids.length; i &lt; j; i++)
+        delete collection[ids[i]]
+    }
+  }
+
+  return Promise.resolve(map(records, function (record) {
+    return outputRecord.call(self, type, record)
+  }))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.<span class="apidocCodeKeywordSpan">create</span>(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.delete" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.delete">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>delete
+        <span class="apidocSignatureSpan">(type, ids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (type, ids) {
+  var collection = this.db[type]
+  var count = 0
+  var i, j, id
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.delete.call(this)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection[id]) {
+      delete collection[id]
+      count++
+    }
+  }
+
+  else for (id in collection) {
+    delete collection[id]
+    count++
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.<span class="apidocCodeKeywordSpan">delete</span>(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.disconnect" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.disconnect">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function () {
+  delete this.db
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.find" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.find">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>find
+        <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (type, ids, options, meta) {
+  var self = this
+  var recordTypes = self.recordTypes
+  var fields = recordTypes[type]
+  var collection = self.db[type]
+  var records = []
+  var i, j, id, record
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.find.call(self)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection.hasOwnProperty(id)) {
+      record = collection[id]
+
+      // LRU update.
+      delete collection[id]
+      collection[id] = record
+
+      records.push(outputRecord.call(self, type, record))
+    }
+  }
+
+  else for (id in collection)
+    records.push(outputRecord.call(self, type, collection[id]))
+
+  return Promise.resolve(applyOptions(fields, records, options, meta))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Fortune has 4 main methods: `find`, `create`, `update`, &amp; `delete`, which correspond to [CRUD](https://en.wikipedia.org/wiki
+/Create,_read,_update_and_delete). The method signatures are as follows:
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.<span class="apidocCodeKeywordSpan">find</span>(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.update" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.update">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>update
+        <span class="apidocSignatureSpan">(type, updates)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (type, updates) {
+  var self = this
+  var primaryKey = self.keys.primary
+  var collection = self.db[type]
+  var count = 0
+  var i, j, update, id, record
+
+  if (!updates.length) return Adapter.prototype.update.call(self)
+
+  for (i = 0, j = updates.length; i &lt; j; i++) {
+    update = updates[i]
+    id = update[primaryKey]
+    record = collection[id]
+
+    if (!record) continue
+
+    count++
+    record = outputRecord.call(self, type, record)
+
+    applyUpdate(record, update)
+
+    // LRU update.
+    delete collection[id]
+
+    collection[id] = inputRecord.call(self, type, record)
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.<span class="apidocCodeKeywordSpan">update</span>(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.connect" id="apidoc.module.fortune.Adapter.DefaultAdapter.prototype.connect">module fortune.Adapter.DefaultAdapter.prototype.connect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.connect.connect" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.connect.connect">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>connect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function () {
+  var recordTypes = this.recordTypes
+  var type
+
+  this.db = {}
+
+  for (type in recordTypes)
+    this.db[type] = {}
+
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The `fortuneHTTP` function returns a listener function which does
+// content negotiation, and maps the internal response to a HTTP response.
+const listener = fortuneHTTP(store)
+const server = http.createServer((request, response) =&gt;
+  listener(request, response)
+  .catch(error =&gt; { /* error logging */ }))
+
+store.<span class="apidocCodeKeywordSpan">connect</span>().then(() =&gt; server.listen(1337))
+```
+
+This yields an *ad hoc* JSON over HTTP API, as well as a HTML interface for humans. There are also serializers for [Micro API](https
+://github.com/fortunejs/fortune-micro-api) (JSON-LD) and [JSON API](https://github.com/fortunejs/fortune-json-api).
+
+Fortune.js implements its own [wire protocol](https://github.com/fortunejs/fortune-ws) based on [WebSocket](https://developer.mozilla
+.org/docs/Web/API/WebSockets_API) and [MessagePack](http://msgpack.org), which is useful for soft real-time applications.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.create" id="apidoc.module.fortune.Adapter.DefaultAdapter.prototype.create">module fortune.Adapter.DefaultAdapter.prototype.create</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.create.create" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.create.create">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>create
+        <span class="apidocSignatureSpan">(type, records, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (type, records, meta) {
+  var self = this
+  var message = self.message
+  var recordsPerType = self.options.recordsPerType
+  var primaryKey = self.keys.primary
+  var ConflictError = self.errors.ConflictError
+  var collection = self.db[type]
+  var i, j, record, id, ids, language
+
+  if (!meta) meta = {}
+  language = meta.language
+
+  records = map(records, function (record) {
+    return inputRecord.call(self, type, record)
+  })
+
+  // First check for collisions.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    id = record[primaryKey]
+
+    if (collection.hasOwnProperty(id))
+      return Promise.reject(new ConflictError(
+        message('RecordExists', language, { id: id })))
+  }
+
+  // Then save it to memory.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    collection[record[primaryKey]] = record
+  }
+
+  // Clear least recently used records.
+  if (recordsPerType) {
+    ids = Object.keys(collection)
+
+    if (ids.length &gt; recordsPerType) {
+      ids = ids.slice(0, ids.length - recordsPerType)
+
+      for (i = 0, j = ids.length; i &lt; j; i++)
+        delete collection[ids[i]]
+    }
+  }
+
+  return Promise.resolve(map(records, function (record) {
+    return outputRecord.call(self, type, record)
+  }))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.<span class="apidocCodeKeywordSpan">create</span>(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.delete" id="apidoc.module.fortune.Adapter.DefaultAdapter.prototype.delete">module fortune.Adapter.DefaultAdapter.prototype.delete</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.delete.delete" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.delete.delete">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>delete
+        <span class="apidocSignatureSpan">(type, ids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (type, ids) {
+  var collection = this.db[type]
+  var count = 0
+  var i, j, id
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.delete.call(this)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection[id]) {
+      delete collection[id]
+      count++
+    }
+  }
+
+  else for (id in collection) {
+    delete collection[id]
+    count++
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.<span class="apidocCodeKeywordSpan">delete</span>(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.disconnect" id="apidoc.module.fortune.Adapter.DefaultAdapter.prototype.disconnect">module fortune.Adapter.DefaultAdapter.prototype.disconnect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.disconnect.disconnect" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.disconnect.disconnect">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function () {
+  delete this.db
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.find" id="apidoc.module.fortune.Adapter.DefaultAdapter.prototype.find">module fortune.Adapter.DefaultAdapter.prototype.find</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.find.find" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.find.find">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>find
+        <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (type, ids, options, meta) {
+  var self = this
+  var recordTypes = self.recordTypes
+  var fields = recordTypes[type]
+  var collection = self.db[type]
+  var records = []
+  var i, j, id, record
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.find.call(self)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection.hasOwnProperty(id)) {
+      record = collection[id]
+
+      // LRU update.
+      delete collection[id]
+      collection[id] = record
+
+      records.push(outputRecord.call(self, type, record))
+    }
+  }
+
+  else for (id in collection)
+    records.push(outputRecord.call(self, type, collection[id]))
+
+  return Promise.resolve(applyOptions(fields, records, options, meta))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Fortune has 4 main methods: `find`, `create`, `update`, &amp; `delete`, which correspond to [CRUD](https://en.wikipedia.org/wiki
+/Create,_read,_update_and_delete). The method signatures are as follows:
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.<span class="apidocCodeKeywordSpan">find</span>(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.DefaultAdapter.prototype.update" id="apidoc.module.fortune.Adapter.DefaultAdapter.prototype.update">module fortune.Adapter.DefaultAdapter.prototype.update</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.DefaultAdapter.prototype.update.update" id="apidoc.element.fortune.Adapter.DefaultAdapter.prototype.update.update">
+        function <span class="apidocSignatureSpan">fortune.Adapter.DefaultAdapter.prototype.</span>update
+        <span class="apidocSignatureSpan">(type, updates)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (type, updates) {
+  var self = this
+  var primaryKey = self.keys.primary
+  var collection = self.db[type]
+  var count = 0
+  var i, j, update, id, record
+
+  if (!updates.length) return Adapter.prototype.update.call(self)
+
+  for (i = 0, j = updates.length; i &lt; j; i++) {
+    update = updates[i]
+    id = update[primaryKey]
+    record = collection[id]
+
+    if (!record) continue
+
+    count++
+    record = outputRecord.call(self, type, record)
+
+    applyUpdate(record, update)
+
+    // LRU update.
+    delete collection[id]
+
+    collection[id] = inputRecord.call(self, type, record)
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.<span class="apidocCodeKeywordSpan">update</span>(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.prototype" id="apidoc.module.fortune.Adapter.prototype">module fortune.Adapter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.applyOperators" id="apidoc.element.fortune.Adapter.prototype.applyOperators">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>applyOperators
+        <span class="apidocSignatureSpan">(record)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyOperators = function (record) {
+  return record
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.beginTransaction" id="apidoc.element.fortune.Adapter.prototype.beginTransaction">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>beginTransaction
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">beginTransaction = function () {
+  return Promise.resolve(this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.connect" id="apidoc.element.fortune.Adapter.prototype.connect">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>connect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function () {
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The `fortuneHTTP` function returns a listener function which does
+// content negotiation, and maps the internal response to a HTTP response.
+const listener = fortuneHTTP(store)
+const server = http.createServer((request, response) =&gt;
+  listener(request, response)
+  .catch(error =&gt; { /* error logging */ }))
+
+store.<span class="apidocCodeKeywordSpan">connect</span>().then(() =&gt; server.listen(1337))
+```
+
+This yields an *ad hoc* JSON over HTTP API, as well as a HTML interface for humans. There are also serializers for [Micro API](https
+://github.com/fortunejs/fortune-micro-api) (JSON-LD) and [JSON API](https://github.com/fortunejs/fortune-json-api).
+
+Fortune.js implements its own [wire protocol](https://github.com/fortunejs/fortune-ws) based on [WebSocket](https://developer.mozilla
+.org/docs/Web/API/WebSockets_API) and [MessagePack](http://msgpack.org), which is useful for soft real-time applications.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.create" id="apidoc.element.fortune.Adapter.prototype.create">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function () {
+  return Promise.resolve([])
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.<span class="apidocCodeKeywordSpan">create</span>(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.delete" id="apidoc.element.fortune.Adapter.prototype.delete">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>delete
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function () {
+  return Promise.resolve(0)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.<span class="apidocCodeKeywordSpan">delete</span>(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.disconnect" id="apidoc.element.fortune.Adapter.prototype.disconnect">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function () {
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.endTransaction" id="apidoc.element.fortune.Adapter.prototype.endTransaction">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>endTransaction
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">endTransaction = function () {
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.find" id="apidoc.element.fortune.Adapter.prototype.find">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>find
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function () {
+  var results = []
+  results.count = 0
+  return Promise.resolve(results)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Fortune has 4 main methods: `find`, `create`, `update`, &amp; `delete`, which correspond to [CRUD](https://en.wikipedia.org/wiki
+/Create,_read,_update_and_delete). The method signatures are as follows:
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.<span class="apidocCodeKeywordSpan">find</span>(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.update" id="apidoc.element.fortune.Adapter.prototype.update">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>update
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function () {
+  return Promise.resolve(0)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.<span class="apidocCodeKeywordSpan">update</span>(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.prototype.applyOperators" id="apidoc.module.fortune.Adapter.prototype.applyOperators">module fortune.Adapter.prototype.applyOperators</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.applyOperators.applyOperators" id="apidoc.element.fortune.Adapter.prototype.applyOperators.applyOperators">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>applyOperators
+        <span class="apidocSignatureSpan">(record)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyOperators = function (record) {
+  return record
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.prototype.beginTransaction" id="apidoc.module.fortune.Adapter.prototype.beginTransaction">module fortune.Adapter.prototype.beginTransaction</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.beginTransaction.beginTransaction" id="apidoc.element.fortune.Adapter.prototype.beginTransaction.beginTransaction">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>beginTransaction
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">beginTransaction = function () {
+  return Promise.resolve(this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.prototype.connect" id="apidoc.module.fortune.Adapter.prototype.connect">module fortune.Adapter.prototype.connect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.connect.connect" id="apidoc.element.fortune.Adapter.prototype.connect.connect">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>connect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function () {
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The `fortuneHTTP` function returns a listener function which does
+// content negotiation, and maps the internal response to a HTTP response.
+const listener = fortuneHTTP(store)
+const server = http.createServer((request, response) =&gt;
+  listener(request, response)
+  .catch(error =&gt; { /* error logging */ }))
+
+store.<span class="apidocCodeKeywordSpan">connect</span>().then(() =&gt; server.listen(1337))
+```
+
+This yields an *ad hoc* JSON over HTTP API, as well as a HTML interface for humans. There are also serializers for [Micro API](https
+://github.com/fortunejs/fortune-micro-api) (JSON-LD) and [JSON API](https://github.com/fortunejs/fortune-json-api).
+
+Fortune.js implements its own [wire protocol](https://github.com/fortunejs/fortune-ws) based on [WebSocket](https://developer.mozilla
+.org/docs/Web/API/WebSockets_API) and [MessagePack](http://msgpack.org), which is useful for soft real-time applications.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.prototype.create" id="apidoc.module.fortune.Adapter.prototype.create">module fortune.Adapter.prototype.create</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.create.create" id="apidoc.element.fortune.Adapter.prototype.create.create">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function () {
+  return Promise.resolve([])
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.<span class="apidocCodeKeywordSpan">create</span>(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.prototype.delete" id="apidoc.module.fortune.Adapter.prototype.delete">module fortune.Adapter.prototype.delete</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.delete.delete" id="apidoc.element.fortune.Adapter.prototype.delete.delete">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>delete
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function () {
+  return Promise.resolve(0)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.<span class="apidocCodeKeywordSpan">delete</span>(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.prototype.disconnect" id="apidoc.module.fortune.Adapter.prototype.disconnect">module fortune.Adapter.prototype.disconnect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.disconnect.disconnect" id="apidoc.element.fortune.Adapter.prototype.disconnect.disconnect">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function () {
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.prototype.endTransaction" id="apidoc.module.fortune.Adapter.prototype.endTransaction">module fortune.Adapter.prototype.endTransaction</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.endTransaction.endTransaction" id="apidoc.element.fortune.Adapter.prototype.endTransaction.endTransaction">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>endTransaction
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">endTransaction = function () {
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.prototype.find" id="apidoc.module.fortune.Adapter.prototype.find">module fortune.Adapter.prototype.find</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.find.find" id="apidoc.element.fortune.Adapter.prototype.find.find">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>find
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function () {
+  var results = []
+  results.count = 0
+  return Promise.resolve(results)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Fortune has 4 main methods: `find`, `create`, `update`, &amp; `delete`, which correspond to [CRUD](https://en.wikipedia.org/wiki
+/Create,_read,_update_and_delete). The method signatures are as follows:
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.<span class="apidocCodeKeywordSpan">find</span>(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.Adapter.prototype.update" id="apidoc.module.fortune.Adapter.prototype.update">module fortune.Adapter.prototype.update</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.Adapter.prototype.update.update" id="apidoc.element.fortune.Adapter.prototype.update.update">
+        function <span class="apidocSignatureSpan">fortune.Adapter.prototype.</span>update
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function () {
+  return Promise.resolve(0)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.<span class="apidocCodeKeywordSpan">update</span>(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.adapters" id="apidoc.module.fortune.adapters">module fortune.adapters</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory" id="apidoc.element.fortune.adapters.memory">
+        function <span class="apidocSignatureSpan">fortune.adapters.</span>memory
+        <span class="apidocSignatureSpan">(properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemoryAdapter(properties) {
+  Adapter.call(this, properties)
+  if (!this.options) this.options = {}
+  if (!('recordsPerType' in this.options))
+    this.options.recordsPerType = 1000
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.adapters.memory" id="apidoc.module.fortune.adapters.memory">module fortune.adapters.memory</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.memory" id="apidoc.element.fortune.adapters.memory.memory">
+        function <span class="apidocSignatureSpan">fortune.adapters.</span>memory
+        <span class="apidocSignatureSpan">(properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MemoryAdapter(properties) {
+  Adapter.call(this, properties)
+  if (!this.options) this.options = {}
+  if (!('recordsPerType' in this.options))
+    this.options.recordsPerType = 1000
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.adapters.memory.prototype" id="apidoc.module.fortune.adapters.memory.prototype">module fortune.adapters.memory.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.connect" id="apidoc.element.fortune.adapters.memory.prototype.connect">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>connect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function () {
+  var recordTypes = this.recordTypes
+  var type
+
+  this.db = {}
+
+  for (type in recordTypes)
+    this.db[type] = {}
+
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The `fortuneHTTP` function returns a listener function which does
+// content negotiation, and maps the internal response to a HTTP response.
+const listener = fortuneHTTP(store)
+const server = http.createServer((request, response) =&gt;
+  listener(request, response)
+  .catch(error =&gt; { /* error logging */ }))
+
+store.<span class="apidocCodeKeywordSpan">connect</span>().then(() =&gt; server.listen(1337))
+```
+
+This yields an *ad hoc* JSON over HTTP API, as well as a HTML interface for humans. There are also serializers for [Micro API](https
+://github.com/fortunejs/fortune-micro-api) (JSON-LD) and [JSON API](https://github.com/fortunejs/fortune-json-api).
+
+Fortune.js implements its own [wire protocol](https://github.com/fortunejs/fortune-ws) based on [WebSocket](https://developer.mozilla
+.org/docs/Web/API/WebSockets_API) and [MessagePack](http://msgpack.org), which is useful for soft real-time applications.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.create" id="apidoc.element.fortune.adapters.memory.prototype.create">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>create
+        <span class="apidocSignatureSpan">(type, records, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (type, records, meta) {
+  var self = this
+  var message = self.message
+  var recordsPerType = self.options.recordsPerType
+  var primaryKey = self.keys.primary
+  var ConflictError = self.errors.ConflictError
+  var collection = self.db[type]
+  var i, j, record, id, ids, language
+
+  if (!meta) meta = {}
+  language = meta.language
+
+  records = map(records, function (record) {
+    return inputRecord.call(self, type, record)
+  })
+
+  // First check for collisions.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    id = record[primaryKey]
+
+    if (collection.hasOwnProperty(id))
+      return Promise.reject(new ConflictError(
+        message('RecordExists', language, { id: id })))
+  }
+
+  // Then save it to memory.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    collection[record[primaryKey]] = record
+  }
+
+  // Clear least recently used records.
+  if (recordsPerType) {
+    ids = Object.keys(collection)
+
+    if (ids.length &gt; recordsPerType) {
+      ids = ids.slice(0, ids.length - recordsPerType)
+
+      for (i = 0, j = ids.length; i &lt; j; i++)
+        delete collection[ids[i]]
+    }
+  }
+
+  return Promise.resolve(map(records, function (record) {
+    return outputRecord.call(self, type, record)
+  }))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.<span class="apidocCodeKeywordSpan">create</span>(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.delete" id="apidoc.element.fortune.adapters.memory.prototype.delete">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>delete
+        <span class="apidocSignatureSpan">(type, ids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (type, ids) {
+  var collection = this.db[type]
+  var count = 0
+  var i, j, id
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.delete.call(this)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection[id]) {
+      delete collection[id]
+      count++
+    }
+  }
+
+  else for (id in collection) {
+    delete collection[id]
+    count++
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.<span class="apidocCodeKeywordSpan">delete</span>(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.disconnect" id="apidoc.element.fortune.adapters.memory.prototype.disconnect">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function () {
+  delete this.db
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.find" id="apidoc.element.fortune.adapters.memory.prototype.find">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>find
+        <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (type, ids, options, meta) {
+  var self = this
+  var recordTypes = self.recordTypes
+  var fields = recordTypes[type]
+  var collection = self.db[type]
+  var records = []
+  var i, j, id, record
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.find.call(self)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection.hasOwnProperty(id)) {
+      record = collection[id]
+
+      // LRU update.
+      delete collection[id]
+      collection[id] = record
+
+      records.push(outputRecord.call(self, type, record))
+    }
+  }
+
+  else for (id in collection)
+    records.push(outputRecord.call(self, type, collection[id]))
+
+  return Promise.resolve(applyOptions(fields, records, options, meta))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Fortune has 4 main methods: `find`, `create`, `update`, &amp; `delete`, which correspond to [CRUD](https://en.wikipedia.org/wiki
+/Create,_read,_update_and_delete). The method signatures are as follows:
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.<span class="apidocCodeKeywordSpan">find</span>(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.update" id="apidoc.element.fortune.adapters.memory.prototype.update">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>update
+        <span class="apidocSignatureSpan">(type, updates)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (type, updates) {
+  var self = this
+  var primaryKey = self.keys.primary
+  var collection = self.db[type]
+  var count = 0
+  var i, j, update, id, record
+
+  if (!updates.length) return Adapter.prototype.update.call(self)
+
+  for (i = 0, j = updates.length; i &lt; j; i++) {
+    update = updates[i]
+    id = update[primaryKey]
+    record = collection[id]
+
+    if (!record) continue
+
+    count++
+    record = outputRecord.call(self, type, record)
+
+    applyUpdate(record, update)
+
+    // LRU update.
+    delete collection[id]
+
+    collection[id] = inputRecord.call(self, type, record)
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.<span class="apidocCodeKeywordSpan">update</span>(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.adapters.memory.prototype.connect" id="apidoc.module.fortune.adapters.memory.prototype.connect">module fortune.adapters.memory.prototype.connect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.connect.connect" id="apidoc.element.fortune.adapters.memory.prototype.connect.connect">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>connect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function () {
+  var recordTypes = this.recordTypes
+  var type
+
+  this.db = {}
+
+  for (type in recordTypes)
+    this.db[type] = {}
+
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The `fortuneHTTP` function returns a listener function which does
+// content negotiation, and maps the internal response to a HTTP response.
+const listener = fortuneHTTP(store)
+const server = http.createServer((request, response) =&gt;
+  listener(request, response)
+  .catch(error =&gt; { /* error logging */ }))
+
+store.<span class="apidocCodeKeywordSpan">connect</span>().then(() =&gt; server.listen(1337))
+```
+
+This yields an *ad hoc* JSON over HTTP API, as well as a HTML interface for humans. There are also serializers for [Micro API](https
+://github.com/fortunejs/fortune-micro-api) (JSON-LD) and [JSON API](https://github.com/fortunejs/fortune-json-api).
+
+Fortune.js implements its own [wire protocol](https://github.com/fortunejs/fortune-ws) based on [WebSocket](https://developer.mozilla
+.org/docs/Web/API/WebSockets_API) and [MessagePack](http://msgpack.org), which is useful for soft real-time applications.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.adapters.memory.prototype.create" id="apidoc.module.fortune.adapters.memory.prototype.create">module fortune.adapters.memory.prototype.create</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.create.create" id="apidoc.element.fortune.adapters.memory.prototype.create.create">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>create
+        <span class="apidocSignatureSpan">(type, records, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (type, records, meta) {
+  var self = this
+  var message = self.message
+  var recordsPerType = self.options.recordsPerType
+  var primaryKey = self.keys.primary
+  var ConflictError = self.errors.ConflictError
+  var collection = self.db[type]
+  var i, j, record, id, ids, language
+
+  if (!meta) meta = {}
+  language = meta.language
+
+  records = map(records, function (record) {
+    return inputRecord.call(self, type, record)
+  })
+
+  // First check for collisions.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    id = record[primaryKey]
+
+    if (collection.hasOwnProperty(id))
+      return Promise.reject(new ConflictError(
+        message('RecordExists', language, { id: id })))
+  }
+
+  // Then save it to memory.
+  for (i = 0, j = records.length; i &lt; j; i++) {
+    record = records[i]
+    collection[record[primaryKey]] = record
+  }
+
+  // Clear least recently used records.
+  if (recordsPerType) {
+    ids = Object.keys(collection)
+
+    if (ids.length &gt; recordsPerType) {
+      ids = ids.slice(0, ids.length - recordsPerType)
+
+      for (i = 0, j = ids.length; i &lt; j; i++)
+        delete collection[ids[i]]
+    }
+  }
+
+  return Promise.resolve(map(records, function (record) {
+    return outputRecord.call(self, type, record)
+  }))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.<span class="apidocCodeKeywordSpan">create</span>(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.adapters.memory.prototype.delete" id="apidoc.module.fortune.adapters.memory.prototype.delete">module fortune.adapters.memory.prototype.delete</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.delete.delete" id="apidoc.element.fortune.adapters.memory.prototype.delete.delete">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>delete
+        <span class="apidocSignatureSpan">(type, ids)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (type, ids) {
+  var collection = this.db[type]
+  var count = 0
+  var i, j, id
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.delete.call(this)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection[id]) {
+      delete collection[id]
+      count++
+    }
+  }
+
+  else for (id in collection) {
+    delete collection[id]
+    count++
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.<span class="apidocCodeKeywordSpan">delete</span>(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.adapters.memory.prototype.disconnect" id="apidoc.module.fortune.adapters.memory.prototype.disconnect">module fortune.adapters.memory.prototype.disconnect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.disconnect.disconnect" id="apidoc.element.fortune.adapters.memory.prototype.disconnect.disconnect">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>disconnect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">disconnect = function () {
+  delete this.db
+  return Promise.resolve()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.adapters.memory.prototype.find" id="apidoc.module.fortune.adapters.memory.prototype.find">module fortune.adapters.memory.prototype.find</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.find.find" id="apidoc.element.fortune.adapters.memory.prototype.find.find">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>find
+        <span class="apidocSignatureSpan">(type, ids, options, meta)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (type, ids, options, meta) {
+  var self = this
+  var recordTypes = self.recordTypes
+  var fields = recordTypes[type]
+  var collection = self.db[type]
+  var records = []
+  var i, j, id, record
+
+  if (ids &amp;&amp; !ids.length) return Adapter.prototype.find.call(self)
+
+  if (ids) for (i = 0, j = ids.length; i &lt; j; i++) {
+    id = ids[i]
+    if (collection.hasOwnProperty(id)) {
+      record = collection[id]
+
+      // LRU update.
+      delete collection[id]
+      collection[id] = record
+
+      records.push(outputRecord.call(self, type, record))
+    }
+  }
+
+  else for (id in collection)
+    records.push(outputRecord.call(self, type, collection[id]))
+
+  return Promise.resolve(applyOptions(fields, records, options, meta))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Fortune has 4 main methods: `find`, `create`, `update`, &amp; `delete`, which correspond to [CRUD](https://en.wikipedia.org/wiki
+/Create,_read,_update_and_delete). The method signatures are as follows:
+
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.<span class="apidocCodeKeywordSpan">find</span>(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.update(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.adapters.memory.prototype.update" id="apidoc.module.fortune.adapters.memory.prototype.update">module fortune.adapters.memory.prototype.update</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.adapters.memory.prototype.update.update" id="apidoc.element.fortune.adapters.memory.prototype.update.update">
+        function <span class="apidocSignatureSpan">fortune.adapters.memory.prototype.</span>update
+        <span class="apidocSignatureSpan">(type, updates)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function (type, updates) {
+  var self = this
+  var primaryKey = self.keys.primary
+  var collection = self.db[type]
+  var count = 0
+  var i, j, update, id, record
+
+  if (!updates.length) return Adapter.prototype.update.call(self)
+
+  for (i = 0, j = updates.length; i &lt; j; i++) {
+    update = updates[i]
+    id = update[primaryKey]
+    record = collection[id]
+
+    if (!record) continue
+
+    count++
+    record = outputRecord.call(self, type, record)
+
+    applyUpdate(record, update)
+
+    // LRU update.
+    delete collection[id]
+
+    collection[id] = inputRecord.call(self, type, record)
+  }
+
+  return Promise.resolve(count)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+// The first argument `type` is always required. The optional `include`
+// argument is used for finding related records in the same request and is
+// documented in the `request` method, and the optional `meta` is specific to
+// the adapter. All methods return promises.
+store.find(type, ids, options, include, meta)
+store.create(type, records, include, meta) // Records required.
+store.<span class="apidocCodeKeywordSpan">update</span>(type, updates, include, meta) // Updates required.
+store.delete(type, ids, include, meta)
+
+// For example...
+store.find('user', 123).then(results =&gt; { ... })
+```
+
+The first method call to interact with the database will trigger a connection to the data store, and it returns the result as a
+Promise. The specific methods wrap around the more general `request` method, see the [API documentation for `request`](http://fortune
+.js.org/api/#fortune-request).
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.errors" id="apidoc.module.fortune.errors">module fortune.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.BadRequestError" id="apidoc.element.fortune.errors.BadRequestError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>BadRequestError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BadRequestError() { if (!(this instanceof BadRequestError)) return new (BadRequestError.bind.apply(BadRequestError, Array
+.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.ConflictError" id="apidoc.element.fortune.errors.ConflictError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>ConflictError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ConflictError() { if (!(this instanceof ConflictError)) return new (ConflictError.bind.apply(ConflictError, Array.prototype
+.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.ForbiddenError" id="apidoc.element.fortune.errors.ForbiddenError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>ForbiddenError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ForbiddenError() { if (!(this instanceof ForbiddenError)) return new (ForbiddenError.bind.apply(ForbiddenError, Array.prototype
+.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.MethodError" id="apidoc.element.fortune.errors.MethodError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>MethodError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MethodError() { if (!(this instanceof MethodError)) return new (MethodError.bind.apply(MethodError, Array.prototype.concat
+.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.NotAcceptableError" id="apidoc.element.fortune.errors.NotAcceptableError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>NotAcceptableError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotAcceptableError() { if (!(this instanceof NotAcceptableError)) return new (NotAcceptableError.bind.apply(NotAcceptableError
+, Array.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.NotFoundError" id="apidoc.element.fortune.errors.NotFoundError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>NotFoundError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotFoundError() { if (!(this instanceof NotFoundError)) return new (NotFoundError.bind.apply(NotFoundError, Array.prototype
+.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.UnauthorizedError" id="apidoc.element.fortune.errors.UnauthorizedError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>UnauthorizedError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UnauthorizedError() { if (!(this instanceof UnauthorizedError)) return new (UnauthorizedError.bind.apply(UnauthorizedError
+, Array.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.UnsupportedError" id="apidoc.element.fortune.errors.UnsupportedError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>UnsupportedError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UnsupportedError() { if (!(this instanceof UnsupportedError)) return new (UnsupportedError.bind.apply(UnsupportedError,
+Array.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.errors.BadRequestError" id="apidoc.module.fortune.errors.BadRequestError">module fortune.errors.BadRequestError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.BadRequestError.BadRequestError" id="apidoc.element.fortune.errors.BadRequestError.BadRequestError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>BadRequestError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function BadRequestError() { if (!(this instanceof BadRequestError)) return new (BadRequestError.bind.apply(BadRequestError, Array
+.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.errors.ConflictError" id="apidoc.module.fortune.errors.ConflictError">module fortune.errors.ConflictError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.ConflictError.ConflictError" id="apidoc.element.fortune.errors.ConflictError.ConflictError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>ConflictError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ConflictError() { if (!(this instanceof ConflictError)) return new (ConflictError.bind.apply(ConflictError, Array.prototype
+.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.errors.ForbiddenError" id="apidoc.module.fortune.errors.ForbiddenError">module fortune.errors.ForbiddenError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.ForbiddenError.ForbiddenError" id="apidoc.element.fortune.errors.ForbiddenError.ForbiddenError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>ForbiddenError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ForbiddenError() { if (!(this instanceof ForbiddenError)) return new (ForbiddenError.bind.apply(ForbiddenError, Array.prototype
+.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.errors.MethodError" id="apidoc.module.fortune.errors.MethodError">module fortune.errors.MethodError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.MethodError.MethodError" id="apidoc.element.fortune.errors.MethodError.MethodError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>MethodError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MethodError() { if (!(this instanceof MethodError)) return new (MethodError.bind.apply(MethodError, Array.prototype.concat
+.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.errors.NotAcceptableError" id="apidoc.module.fortune.errors.NotAcceptableError">module fortune.errors.NotAcceptableError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.NotAcceptableError.NotAcceptableError" id="apidoc.element.fortune.errors.NotAcceptableError.NotAcceptableError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>NotAcceptableError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotAcceptableError() { if (!(this instanceof NotAcceptableError)) return new (NotAcceptableError.bind.apply(NotAcceptableError
+, Array.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.errors.NotFoundError" id="apidoc.module.fortune.errors.NotFoundError">module fortune.errors.NotFoundError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.NotFoundError.NotFoundError" id="apidoc.element.fortune.errors.NotFoundError.NotFoundError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>NotFoundError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotFoundError() { if (!(this instanceof NotFoundError)) return new (NotFoundError.bind.apply(NotFoundError, Array.prototype
+.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.errors.UnauthorizedError" id="apidoc.module.fortune.errors.UnauthorizedError">module fortune.errors.UnauthorizedError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.UnauthorizedError.UnauthorizedError" id="apidoc.element.fortune.errors.UnauthorizedError.UnauthorizedError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>UnauthorizedError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UnauthorizedError() { if (!(this instanceof UnauthorizedError)) return new (UnauthorizedError.bind.apply(UnauthorizedError
+, Array.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.errors.UnsupportedError" id="apidoc.module.fortune.errors.UnsupportedError">module fortune.errors.UnsupportedError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.UnsupportedError.UnsupportedError" id="apidoc.element.fortune.errors.UnsupportedError.UnsupportedError">
+        function <span class="apidocSignatureSpan">fortune.errors.</span>UnsupportedError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UnsupportedError() { if (!(this instanceof UnsupportedError)) return new (UnsupportedError.bind.apply(UnsupportedError,
+Array.prototype.concat.apply([ null ], arguments))); setupError.apply(this, arguments); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.errors.nativeErrors" id="apidoc.module.fortune.errors.nativeErrors">module fortune.errors.nativeErrors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.nativeErrors.0" id="apidoc.element.fortune.errors.nativeErrors.0">
+        function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>0
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Error() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.nativeErrors.1" id="apidoc.element.fortune.errors.nativeErrors.1">
+        function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>1
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TypeError() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.nativeErrors.2" id="apidoc.element.fortune.errors.nativeErrors.2">
+        function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>2
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReferenceError() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.nativeErrors.3" id="apidoc.element.fortune.errors.nativeErrors.3">
+        function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>3
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RangeError() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.nativeErrors.4" id="apidoc.element.fortune.errors.nativeErrors.4">
+        function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>4
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SyntaxError() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.nativeErrors.5" id="apidoc.element.fortune.errors.nativeErrors.5">
+        function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>5
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EvalError() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.errors.nativeErrors.6" id="apidoc.element.fortune.errors.nativeErrors.6">
+        function <span class="apidocSignatureSpan">fortune.errors.nativeErrors.</span>6
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function URIError() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.message" id="apidoc.module.fortune.message">module fortune.message</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.message.message" id="apidoc.element.fortune.message.message">
+        function <span class="apidocSignatureSpan">fortune.</span>message
+        <span class="apidocSignatureSpan">(id, language, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function message(id, language, data) {
+  var str, key, subtag
+
+  if (!message.hasOwnProperty(language)) {
+    subtag = language &amp;&amp; language.match(/.+?(?=-)/)
+    if (subtag) subtag = subtag[0]
+    if (message.hasOwnProperty(subtag)) language = subtag
+    else language = message.defaultLanguage
+  }
+
+  if (!message[language].hasOwnProperty(id))
+    return message[language][genericMessage] || message.en[genericMessage]
+
+  str = message[language][id]
+
+  for (key in data) str = str.replace('{' + key + '}', data[key])
+
+  return str
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fortune.toString" id="apidoc.module.fortune.toString">module fortune.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fortune.toString.toString" id="apidoc.element.fortune.toString.toString">
+        function <span class="apidocSignatureSpan">fortune.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
